@@ -8,13 +8,13 @@ const ExpenseContext = React.createContext({
 export const ExpenseConsumer = ExpenseContext.Consumer;
 
 export class ExpenseProvider extends Component {
+
     state = {
         expenses:[],
-        loading: false
-    }
-    
-    loadData = async => { 
-        this.setState({loading: true});
+        loading: false,
+        loadData: (test) =>  { 
+            console.log(test);
+        }
     }
 
     render(){

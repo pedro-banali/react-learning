@@ -3,19 +3,23 @@ import './content.scss'
 import { ExpenseProvider, ExpenseConsumer } from '../contexts/ExpenseContext';
 
 export class Content extends Component{
+    handleSubmit(e) {
+        e.preventDefault();
+    }
+
     render(){
         return (
             <ExpenseProvider>
                 <ExpenseConsumer>
-                {({loadSomething}) =>
+                {(context) =>
                     <div className="center">
-                        <form className="formContent">
+                        <form className="formContent" onSubmit={(e) => this.handleSubmit(e)}>
                             <label htmlFor="value"> Value:</label>
                             <input  id="value"/>
                             <label htmlFor="type"> Type: </label>
                             <input  id="type"/>
 
-                            <input type="submit" onClick={loadSomething} value="Add" />
+                            <input type="submit" onClick={() => context.loadData("param")} value="Add" />
                         </form>        
                     </div>
                 }
