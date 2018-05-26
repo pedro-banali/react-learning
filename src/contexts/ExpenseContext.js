@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 const ExpenseContext = React.createContext({
+    expense: {},
     expenses:[],
     loading: false
 });
@@ -12,15 +13,19 @@ export class ExpenseProvider extends Component {
     state = {
         expenses:[],
         loading: false,
-        loadData: (test) =>  { 
-            console.log(test);
-        }
     }
+
+    loadData = (value, type ) =>  { 
+        var expenses = this.state.expenses;
+        expenses.push({id: (expenses.length + 1), value: value, type: type});
+        this.setState({ expenses: expenses });
+        console.log(expenses);
+    } 
 
     render(){
         return(
             <ExpenseContext.Provider value={{
-                ...this.state
+                state: this.state, loadData: this.loadData
             }}>
                 {this.props.children}
             </ExpenseContext.Provider>
