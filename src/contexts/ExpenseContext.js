@@ -17,7 +17,7 @@ export class ExpenseProvider extends Component {
 
     loadData = (value, type ) =>  { 
         var expenses = this.state.expenses;
-        expenses.push({id: (expenses.length + 1), value: value, type: type});
+        expenses.push({id: (expenses.length + 1), value: parseFloat(value, 10), type: type});
         this.setState({ expenses: expenses });
         console.log(expenses);
     } 

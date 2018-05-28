@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {LabelProvider, LabelConsumer} from '../contexts/LabelContext'
+import {LabelProvider, LabelConsumer} from '../Contexts/LabelContext'
 import './header.scss' 
 
 export class Header extends Component{

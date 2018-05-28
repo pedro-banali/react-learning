@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.scss';
-import {ThemeProvider, ThemeConsumer} from './contexts/ThemeContext';
-import {Header} from './header/Header';
-import {Content} from './content/Content';
-import {ExpenseProvider} from './contexts/ExpenseContext';
-import {ContentList} from './content/ContentList';
+import {ThemeProvider, ThemeConsumer} from './Contexts/ThemeContext';
+import {Header} from './Header/Header';
+import {Content} from './Content/Content';
+import {ExpenseProvider} from './Contexts/ExpenseContext';
+import {ContentList} from './ContentList/ContentList';
 
 class App extends Component {
   render() {
